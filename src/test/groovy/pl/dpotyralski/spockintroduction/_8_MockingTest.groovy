@@ -1,5 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
+
 import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Specification
 import spock.lang.Subject
@@ -40,9 +41,6 @@ class _8_MockingTest extends Specification {
         then:
         1 * cardProcessor.charge(card, new BigDecimal("120"))
         1 * cardProcessor.charge(card, new BigDecimal("80"))
-
-        and:
-        0 * _
     }
 
     def "should charge call process for right card number"() {

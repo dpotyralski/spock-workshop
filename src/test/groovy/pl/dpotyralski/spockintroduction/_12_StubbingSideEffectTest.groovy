@@ -1,5 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
+
 import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Specification
 import spock.lang.Subject
@@ -20,7 +21,7 @@ class _12_StubbingSideEffectTest extends Specification {
         cardProcessor.charge(card, _ as BigDecimal) >> new ChargeResult(true) >> { throw new IllegalArgumentException() }
 
         expect:
-        sub.chargeRental(rental, card)
+        sub.chargeRental(rental, card) == true
 
         when:
         sub.chargeRental(rental, card)

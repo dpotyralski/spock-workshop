@@ -17,7 +17,7 @@ class _6_DataDrivenTest extends Specification {
         character in characters
 
         where:
-        character << ['a', 'b', 'x', 'c']
+        character << ['a', 'b', 'c']
     }
 
     def "should get the maximum of two numbers"(int a, int b, int c) {
@@ -73,7 +73,7 @@ class _6_DataDrivenTest extends Specification {
         "Pulp Fiction" | STANDARD | createMovie(title, category) || "Pulp Fiction from ${category} category"
     }
 
-    private Movie createMovie(String title, CategoryType categoryType) {
+    private def createMovie(String title, CategoryType categoryType) {
         new Movie(title, categoryType)
     }
 

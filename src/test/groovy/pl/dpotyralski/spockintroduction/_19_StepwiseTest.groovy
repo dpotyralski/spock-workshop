@@ -1,7 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
-import org.spockframework.runtime.model.parallel.ExecutionMode
-import spock.lang.Execution
+
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Stepwise

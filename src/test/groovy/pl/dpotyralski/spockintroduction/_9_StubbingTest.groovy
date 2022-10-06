@@ -1,5 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
+
 import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Specification
 import spock.lang.Subject

@@ -12,10 +12,22 @@ can be added here if needed
 @See("Check this page to know more!")
 class _23_BonusTest extends Specification {
 
-    @FailsWith
+    @FailsWith(RuntimeException)
     def "should fail with Runtime exception"() {
         expect:
         throw new RuntimeException()
+    }
+
+    def "should know more about hello old version"() {
+        given:
+        String hello = "Hello"
+
+        when:
+        hello = "I'm not longer the one"
+
+        then:
+        hello == "I'm not longer the one"
+        old(hello) == "Hello"
     }
 
 }
