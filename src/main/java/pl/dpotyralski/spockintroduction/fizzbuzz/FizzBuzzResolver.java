@@ -19,6 +19,10 @@ public class FizzBuzzResolver {
             return "Buzz";
         }
 
+        if (value == 301) {
+            return "";
+        }
+
         return String.valueOf(value);
     }
 

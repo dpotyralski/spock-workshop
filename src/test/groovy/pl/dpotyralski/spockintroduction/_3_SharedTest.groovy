@@ -29,5 +29,4 @@ class _3_SharedTest extends Specification {
         resolver.resolve(2) == "2"
     }
 
-
 }
