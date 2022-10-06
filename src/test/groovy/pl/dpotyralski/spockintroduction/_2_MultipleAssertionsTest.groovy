@@ -1,6 +1,5 @@
 package pl.dpotyralski.spockintroduction
 
-
 import pl.dpotyralski.spockintroduction.rental.Movie
 import pl.dpotyralski.spockintroduction.rental.Rental
 import spock.lang.Specification
@@ -33,7 +32,8 @@ class _2_MultipleAssertionsTest extends Specification {
     }
 
     def shouldMatchMatrix(Movie movie) {
-        movie.title == "Matrix" && movie.category == STANDARD
+        assert movie.title == "Matrix"
+        assert movie.category == STANDARD
     }
 
     def "should match with `with` method"() {
@@ -64,8 +64,8 @@ class _2_MultipleAssertionsTest extends Specification {
         }
     }
 
-    private static Rental getTestSubject() {
-        new Rental("4be5fbaa-7da2-4b47-a999-9e1e223a57f3", 2, new Movie("Matrix", STANDARD))
+    private static Rental getTestSubject(Movie movie = new Movie("Matrix", STANDARD)) {
+        new Rental("4be5fbaa-7da2-4b47-a999-9e1e223a57f3", 2, movie)
     }
 
 }
