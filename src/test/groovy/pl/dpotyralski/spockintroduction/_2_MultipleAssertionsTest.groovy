@@ -32,8 +32,7 @@ class _2_MultipleAssertionsTest extends Specification {
     }
 
     def shouldMatchMatrix(Movie movie) {
-        assert movie.title == "Matrix"
-        assert movie.category == STANDARD
+        movie.title == "Matrix" && movie.category == STANDARD
     }
 
     def "should match with `with` method"() {
