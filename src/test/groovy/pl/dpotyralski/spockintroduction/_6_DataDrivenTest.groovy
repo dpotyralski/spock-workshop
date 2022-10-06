@@ -1,6 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
-
+import pl.dpotyralski.spockintroduction.rental.CategoryType
 import pl.dpotyralski.spockintroduction.rental.Movie
 import spock.lang.Specification
 
@@ -9,7 +9,7 @@ import static pl.dpotyralski.spockintroduction.rental.CategoryType.STANDARD
 
 class _6_DataDrivenTest extends Specification {
 
-    def "should check if given character #character is in set"() {
+    def "should check if given character `#character` is in set"() {
         given:
         Set<String> characters = ['a', 'b', 'c', 'd', 'e'] as Set
 
@@ -17,10 +17,10 @@ class _6_DataDrivenTest extends Specification {
         character in characters
 
         where:
-        character << ['a', 'b', 'c']
+        character << ['a', 'b', 'x', 'c']
     }
 
-    def "should get the maximum of two numbers"() {
+    def "should get the maximum of two numbers"(int a, int b, int c) {
         expect:
         Math.max(a, b) == c
 
@@ -52,24 +52,29 @@ class _6_DataDrivenTest extends Specification {
         Movie movie = new Movie(title, STANDARD)
 
         then:
-        movie.title == title
+        movie.title == expectedTitle
 
         where:
-        title          | _
-        'Spider Man'   | _
-        'Matrix'       | _
-        'Pulp Fiction' | _
+        title          | category || expectedTitle
+        'Spider Man'   | STANDARD || 'Spider Man'
+        'Matrix'       | STANDARD || 'Matrix'
+        'Pulp Fiction' | STANDARD || 'Pulp Fiction'
+        'xXx'          | STANDARD || 'xXx'
     }
 
-    def "should verify if Movie has expected title"() {
+    def "should verify if movie #title has expected title with category #titleWithCategory"() {
         expect:
         movie.getTitleWithCategory() == titleWithCategory
 
         where:
-        movie                              | titleWithCategory
-        new Movie('Spider Man', STANDARD)  | "Spider Man from STANDARD category"
-        new Movie('Matrix', PREMIUM)       | "Matrix from PREMIUM category"
-        new Movie('Pulp Fiction', PREMIUM) | "Pulp Fiction from PREMIUM category"
+        title          | category | movie                        || titleWithCategory
+        "Spider Man"   | STANDARD | createMovie(title, category) || "Spider Man from ${category} category"
+        "Matrix"       | PREMIUM  | createMovie(title, category) || "Matrix from ${category} category"
+        "Pulp Fiction" | STANDARD | createMovie(title, category) || "Pulp Fiction from ${category} category"
+    }
+
+    private Movie createMovie(String title, CategoryType categoryType) {
+        new Movie(title, categoryType)
     }
 
 }
