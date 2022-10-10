@@ -8,7 +8,6 @@ Aka
 more description
 can be added here if needed
 """)
-@Issue("You can include here your issue")
 @See("Check this page to know more!")
 class _23_BonusTest extends Specification {
 
@@ -26,7 +25,6 @@ class _23_BonusTest extends Specification {
         hello = "I'm not longer the one"
 
         then:
-        hello == "I'm not longer the one"
         old(hello) == "Hello"
     }
 

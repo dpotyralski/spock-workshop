@@ -9,7 +9,6 @@ class _10_StubbingInContextTest extends Specification {
 
     private CardProcessor cardProcessor = Stub(CardProcessor) {
         charge(_ as CreditCard, BigDecimal.valueOf(120)) >> new ChargeResult(true)
-        charge()
     }
 
     @Subject

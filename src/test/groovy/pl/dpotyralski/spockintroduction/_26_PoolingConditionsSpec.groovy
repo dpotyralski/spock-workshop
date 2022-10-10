@@ -15,13 +15,13 @@ class _26_PoolingConditionsSpec extends Specification {
         new Thread(new Runnable() {
             @Override
             void run() {
-                Thread.sleep(1000)
+                Thread.sleep(2000)
                 response = 'OK!'
             }
         }).start()
 
         then:
-        pollingConditions.eventually { response == "OK!" }
+        pollingConditions.within(20) { }
     }
 
 

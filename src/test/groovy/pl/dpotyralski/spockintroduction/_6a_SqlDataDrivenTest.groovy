@@ -53,7 +53,7 @@ insert into customers (id, name) values ('bc299f40-69a8-4d9c-bcb5-2b0660b21085',
 
         where:
         row << sql.rows('select * from customers;')
-//        (id, name) = row
+        (id, name) = row
 //        (id, _) = row // in case you are not interested -> _
     }
 

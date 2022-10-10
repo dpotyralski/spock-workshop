@@ -1,30 +1,30 @@
 package pl.dpotyralski.spockintroduction
 
-import pl.dpotyralski.spockintroduction.rental.*
+import pl.dpotyralski.spockintroduction.customer.Customer
+import pl.dpotyralski.spockintroduction.customer.CustomerRepository
+import pl.dpotyralski.spockintroduction.customer.CustomerService
 import spock.lang.Specification
 import spock.lang.Subject
 
 class _9a_StubbingTest extends Specification {
 
-    private JpaRepository jpaRepository = Stub(JpaRepository) {
-        save(_ as Movie) >> { Movie movie -> movie }
-    }
+    private CustomerRepository customerRepository = Stub(CustomerRepository)
 
     @Subject
-    private MovieDaoService sub = new MovieDaoService(jpaRepository)
+    private CustomerService sub = new CustomerService(customerRepository)
 
-    def "should charge call process for rental"() {
+    def "should call save method and return passed value"() {
         given:
-        def movie = new Movie("Title", CategoryType.PREMIUM)
+        Customer customer = new Customer(id: UUID.randomUUID(), name: "John", country: "POLAND")
 
         and: "stubbing"
-        jpaRepository.save(_ as Movie) >> { Movie m -> movie }
+        customerRepository.save(_ as Customer) >> { Customer c -> customer }
 
         when:
-        def save = sub.save(movie)
+        Customer saved = sub.save(customer)
 
         then:
-        save.getTitle() == "Title"
+        saved.getName() == "John"
     }
 
 }

@@ -1,11 +1,13 @@
 package pl.dpotyralski.spockintroduction.customer
 
+import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Subject
 
 import java.time.Month
 import java.time.MonthDay
 
+@Ignore
 class CustomerBonusAssignerTest extends Specification {
 
     BankHolidaysProvider bankHolidaysProvider = Stub(BankHolidaysProvider) {

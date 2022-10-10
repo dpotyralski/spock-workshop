@@ -9,10 +9,10 @@ import java.util.List;
 @AllArgsConstructor
 public class CustomerProvider {
 
-    private final CustomersRepository customersRepository;
+    private final CustomerJpaRepository customerJPARepository;
 
     public List<Customer> getAllCustomers() {
-        return customersRepository.findAll();
+        return customerJPARepository.findAll();
     }
 
 }
