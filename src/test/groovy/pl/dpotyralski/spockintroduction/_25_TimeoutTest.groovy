@@ -6,13 +6,11 @@ import spock.lang.Timeout
 
 import java.util.concurrent.TimeUnit
 
-class _21_TimeoutTest extends Specification {
+class _25_TimeoutTest extends Specification {
 
     @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
     def "I better be quick"() {
         expect:
         true
     }
-
-
 }

@@ -2,10 +2,12 @@ package pl.dpotyralski.spockintroduction
 
 import groovy.sql.Sql
 import pl.dpotyralski.spockintroduction.customer.Customer
+import spock.lang.Shared
 import spock.lang.Specification
 
-class _6a_SqlDataDrivenTest extends Specification {
+class _6a_H2DataDrivenTest extends Specification {
 
+    @Shared
     static Sql sql = Sql.newInstance("jdbc:h2:./data/test", "sa", 'password', "org.h2.Driver")
 
     void setupSpec() {
@@ -19,10 +21,10 @@ insert into customers (id, name) values ('bc299f40-69a8-4d9c-bcb5-2b0660b21085',
 
     def "Should use data from sql select"() {
         given:
-        Customer customer = new Customer(id: UUID.fromString(id), name: name)
+        Customer customer = new Customer(id: id, name: name)
 
         expect:
-        customer.getId() == UUID.fromString(id)
+        customer.getId() == id
         customer.getName() == name
 
         where:

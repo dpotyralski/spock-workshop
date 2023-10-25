@@ -25,5 +25,4 @@ class _7_FizzBuzzTest extends Specification {
         output = expectedResult ?: 'empty'
     }
 
-
 }

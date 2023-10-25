@@ -7,10 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Primary
+import org.springframework.test.context.ActiveProfiles
 import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Specification
 
 @SpringBootTest
+@ActiveProfiles("h2")
 class _17_SpringMockingBeansTest extends Specification {
 
     @Autowired

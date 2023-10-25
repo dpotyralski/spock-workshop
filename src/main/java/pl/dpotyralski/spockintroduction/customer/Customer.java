@@ -21,17 +21,14 @@ public class Customer {
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
-    @Column(name = "ID", nullable = false)
-    @Type(type = "uuid-char")
-    @ColumnDefault("random_uuid()")
-    private UUID id;
+    private String id;
 
     private String name;
 
     private String country;
 
-    public String getNameWithLastMostSignificantBits(){
-        return name + id.getMostSignificantBits();
-    }
+//    public String getNameWithLastMostSignificantBits(){
+//        return name + id.getMostSignificantBits();
+//    }
 
 }

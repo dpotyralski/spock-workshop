@@ -4,7 +4,7 @@ package pl.dpotyralski.spockintroduction
 import spock.lang.AutoCleanup
 import spock.lang.Specification
 
-class _27_AutoCleanUpTest extends Specification {
+class _29_AutoCleanUpTest extends Specification {
 
     @AutoCleanup(value = "operationUnsupported", quiet = true)
     ExceptionProvider exceptionProvider = new ExceptionProvider()

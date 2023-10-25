@@ -5,7 +5,7 @@ import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Retry
 import spock.lang.Specification
 
-class _22_RetryTest extends Specification {
+class _23_RetryTest extends Specification {
 
     CardProcessor cardProcessor = Stub(CardProcessor)
 
@@ -41,6 +41,4 @@ class _22_RetryTest extends Specification {
         then:
         chargeRental
     }
-
-
 }

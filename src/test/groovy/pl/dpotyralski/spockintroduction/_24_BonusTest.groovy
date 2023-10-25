@@ -9,7 +9,7 @@ more description
 can be added here if needed
 """)
 @See("Check this page to know more!")
-class _23_BonusTest extends Specification {
+class _24_BonusTest extends Specification {
 
     @FailsWith(RuntimeException)
     def "should fail with Runtime exception"() {

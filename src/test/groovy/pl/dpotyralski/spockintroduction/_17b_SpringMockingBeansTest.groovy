@@ -3,11 +3,13 @@ package pl.dpotyralski.spockintroduction
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import pl.dpotyralski.spockintroduction.rental.*
 import spock.lang.Specification
 
 @SpringBootTest
+@ActiveProfiles("h2")
 @ContextConfiguration(classes = CardProcessorContextConfiguration)
 class _17b_SpringMockingBeansTest extends Specification {
 

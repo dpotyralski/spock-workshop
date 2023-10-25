@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Stepwise
 
 @Stepwise
-class _19_StepwiseTest extends Specification {
+class _21_StepwiseTest extends Specification {
 
     @Shared
     private String sharedMessage = ""

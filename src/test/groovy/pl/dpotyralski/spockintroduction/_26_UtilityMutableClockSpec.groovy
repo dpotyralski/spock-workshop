@@ -9,7 +9,7 @@ import java.time.Duration
 import java.time.ZoneId
 import java.time.ZonedDateTime
 
-class _24_UtilityMutableClockSpec extends Specification {
+class _26_UtilityMutableClockSpec extends Specification {
 
     ZonedDateTime defaultTime = defaultZoneDateTime()
     MutableClock clock = new MutableClock(defaultTime)

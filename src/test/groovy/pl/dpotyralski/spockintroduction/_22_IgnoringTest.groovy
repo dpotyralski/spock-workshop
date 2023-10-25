@@ -2,7 +2,7 @@ package pl.dpotyralski.spockintroduction
 
 import spock.lang.*
 
-class _20_IgnoringTest extends Specification {
+class _22_IgnoringTest extends Specification {
 
     @Ignore
     def "should ignore this test"() {

@@ -3,7 +3,7 @@ package pl.dpotyralski.spockintroduction
 
 import spock.lang.Specification
 
-class _25_CollectionConditionsSpec extends Specification {
+class _27_CollectionConditionsSpec extends Specification {
 
     def "should use lenient match"() {
         given:

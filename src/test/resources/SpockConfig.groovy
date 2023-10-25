@@ -1,6 +1,6 @@
 runner {
     parallel {
-        enabled true
+        enabled false
         fixed(4)
     }
 }
