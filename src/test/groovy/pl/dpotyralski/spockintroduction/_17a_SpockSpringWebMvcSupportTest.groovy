@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import pl.dpotyralski.spockintroduction.customer.Customer
-import pl.dpotyralski.spockintroduction.customer.CustomerProvider
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.CustomerProvider
 import spock.lang.Specification
 import spock.mock.DetachedMockFactory
 

@@ -3,8 +3,8 @@ package pl.dpotyralski.spockintroduction
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
-import pl.dpotyralski.spockintroduction.customer.Customer
-import pl.dpotyralski.spockintroduction.customer.CustomerJpaRepository
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.CustomerJpaRepository
 import spock.lang.Specification
 
 @SpringBootTest

@@ -1,8 +1,8 @@
 package pl.dpotyralski.spockintroduction
 
-import pl.dpotyralski.spockintroduction.customer.Customer
-import pl.dpotyralski.spockintroduction.customer.CustomerRepository
-import pl.dpotyralski.spockintroduction.customer.CustomerService
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.CustomerRepository
+import pl.dpotyralski.spockintroduction.workshop.customer.CustomerService
 import spock.lang.Specification
 import spock.lang.Subject
 

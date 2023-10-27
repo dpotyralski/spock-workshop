@@ -1,6 +1,6 @@
 package pl.dpotyralski.spockintroduction
 
-import pl.dpotyralski.spockintroduction.customer.AgeFilter
+import pl.dpotyralski.spockintroduction.workshop.customer.AgeFilter
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.util.time.MutableClock

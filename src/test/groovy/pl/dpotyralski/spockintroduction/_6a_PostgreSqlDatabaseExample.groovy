@@ -3,7 +3,7 @@ package pl.dpotyralski.spockintroduction
 import groovy.sql.Sql
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.spock.Testcontainers
-import pl.dpotyralski.spockintroduction.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
 import spock.lang.Shared
 import spock.lang.Specification
 

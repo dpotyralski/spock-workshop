@@ -8,20 +8,22 @@ class _28_PoolingConditionsSpec extends Specification {
 
     def "should pooling conditions"() {
         given:
-        PollingConditions pollingConditions = new PollingConditions(timeout: 5)
+        PollingConditions pollingConditions = new PollingConditions(timeout: 3)
         String response = ''
 
         when:
         new Thread(new Runnable() {
             @Override
             void run() {
-                Thread.sleep(2000)
+                Thread.sleep(1000)
                 response = 'OK!'
             }
         }).start()
 
         then:
-        pollingConditions.within(20) { }
+        pollingConditions.eventually {
+            response == "OK!"
+        }
     }
 
 

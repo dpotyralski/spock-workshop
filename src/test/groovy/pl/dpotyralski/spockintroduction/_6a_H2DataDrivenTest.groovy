@@ -1,7 +1,7 @@
 package pl.dpotyralski.spockintroduction
 
 import groovy.sql.Sql
-import pl.dpotyralski.spockintroduction.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
 import spock.lang.Shared
 import spock.lang.Specification
 

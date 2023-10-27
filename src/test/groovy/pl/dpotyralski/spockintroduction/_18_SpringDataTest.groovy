@@ -7,8 +7,8 @@ import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.spock.Testcontainers
-import pl.dpotyralski.spockintroduction.customer.Customer
-import pl.dpotyralski.spockintroduction.customer.CustomerJpaRepository
+import pl.dpotyralski.spockintroduction.workshop.customer.Customer
+import pl.dpotyralski.spockintroduction.workshop.customer.CustomerJpaRepository
 import spock.lang.Specification
 
 @DataJpaTest
