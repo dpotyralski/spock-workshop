@@ -1,47 +1,46 @@
 package pl.dpotyralski.spockintroduction.workshop.hamcrest
 
-import pl.dpotyralski.spockintroduction.workshop.hamcrest.HamcrestExercise
-import spock.lang.Ignore
 import spock.lang.Specification
+
+import static org.hamcrest.Matchers.allOf
+import static org.hamcrest.Matchers.equalTo
+import static org.hamcrest.Matchers.equalToCompressingWhiteSpace
+import static org.hamcrest.Matchers.hasEntry
+import static org.hamcrest.Matchers.hasKey
+import static org.hamcrest.Matchers.hasLength
+import static org.hamcrest.Matchers.hasProperty
+import static org.hamcrest.Matchers.is
+import static org.hamcrest.Matchers.oneOf
+import static org.hamcrest.Matchers.startsWith
+import static spock.util.matcher.HamcrestSupport.that
 
 class HamcrestExerciseTest extends Specification {
 
     private HamcrestExercise hamcrestExercise = new HamcrestExercise()
 
-    @Ignore
     def "Should get either foo or bar"() {
-        //TODO
         expect:
-        true
-
+        that(hamcrestExercise.returnsEitherFooOrBar(), is(oneOf("foo", "bar")))
     }
 
-    @Ignore
     def "Should be able to compare without whitespaces"() {
-        //TODO
         expect:
-        true
+        that(hamcrestExercise.returnsStringWithWhitespaces(), equalToCompressingWhiteSpace("More spaces than needed"))
     }
 
-    @Ignore
     def "Should be able to check that object has property name equal to James"() {
-        //TODO
         expect:
-        true
+        that(hamcrestExercise.returnsPersonObject(), hasProperty("name", equalTo("James")))
     }
 
-    @Ignore
     def "Should verify if provided string start with `The sun sets`"() {
-        //TODO
         expect:
-        true
+        that(hamcrestExercise.returnsSomeString(), startsWith("The sun sets"))
     }
 
-    @Ignore
     def "Should provided map with `game` key and `food` entry with 7 characters long"() {
-        //TODO
         expect:
-        true
+        that(hamcrestExercise.returnsSomeMap(), allOf(hasKey("game"), hasEntry(equalTo("food"), hasLength(7))))
     }
 
 }

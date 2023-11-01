@@ -5,7 +5,10 @@ import org.spockframework.spring.SpringSpy
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
+import pl.dpotyralski.spockintroduction.TimeProvider
 import spock.lang.Specification
+
+import java.time.LocalDate
 
 @ActiveProfiles("h2")
 @SpringBootTest
@@ -13,6 +16,11 @@ class PromotionApplierTest extends Specification {
 
     @Autowired
     private PromotionApplier promotionApplier
+
+    @SpringBean
+    private TimeProvider timeProvider = Mock() {
+        date() >> LocalDate.of(2023, 04, 04)
+    }
 
 //    @SpringBean
 //    @SpringSpy

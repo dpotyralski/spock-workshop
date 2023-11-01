@@ -1,10 +1,10 @@
 package pl.dpotyralski.spockintroduction.workshop.sprinklers
 
 import pl.dpotyralski.spockintroduction.TimeProvider
-import spock.lang.Ignore
 import spock.lang.Specification
 import spock.util.time.MutableClock
 
+import java.time.Duration
 import java.time.Instant
 
 class SprinklersLauncherTest extends Specification {
@@ -13,11 +13,20 @@ class SprinklersLauncherTest extends Specification {
     private TimeProvider tp = new TimeProvider(clock)
     private SprinklersLauncher launcher = new SprinklersLauncher(tp)
 
-    @Ignore
     def "Should be able to mange sprinklers"() {
-        //TODO
-        expect:
-        true
-    }
+        when: "clock is set as above"
+        launcher.toogle()
 
+        then: "turning on sprinklers shouldn't be possible"
+        launcher.isWorking() == false
+
+        when:
+        clock + Duration.ofHours(16)
+
+        and: "turning on sprinklers at 10 is ok"
+        launcher.toogle()
+
+        then:
+        launcher.isWorking() == true
+    }
 }

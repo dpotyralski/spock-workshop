@@ -5,6 +5,7 @@ import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Subject
 
+import java.time.LocalDate
 import java.time.Month
 import java.time.MonthDay
 
@@ -24,7 +25,16 @@ class CustomerBonusAssignerTest extends Specification {
             new CustomerBonusAssigner(bankHolidaysProvider, configuration, bonusAssigner)
 
     def "Should assign holiday bonus"() {
-        //TODO
+        given:
+        Customer customer = new Customer(id: UUID.randomUUID(), name: "Joe", country: "DENMARK")
+        BigDecimal bonusAmount = new BigDecimal(100)
+
+        when:
+        customerBonusAssigner.assignBonus(customer, LocalDate.of(2021, 6, 5))
+
+        then:
+        1 * configuration.getHolidayBonus() >> bonusAmount
+        1 * bonusAssigner.assignBonus(customer, bonusAmount)
     }
 
     def "Should assign regular bonus"() {
