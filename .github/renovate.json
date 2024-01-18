@@ -1,4 +1,5 @@
 {
+  "autoApprove": true,
   "automerge": true,
   "automergeType": "pr",
   "automergeStrategy": "squash"
