@@ -16,7 +16,7 @@ class _22_IgnoringTest extends Specification {
         throw new IllegalStateException("")
     }
 
-    @PendingFeatureIf({ System.getProperty("os.name") == "Mac OS X" })
+    @PendingFeatureIf({ System.getProperty("os.name") != "Mac OS X" })
     def "test should be run on condition, but due to error result ignored"() {
         expect:
         throw new IllegalStateException("")
