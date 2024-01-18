@@ -18,5 +18,4 @@ public class SpockIntroductionApplication {
         return new CreditCardProcessor();
     }
 
-
 }

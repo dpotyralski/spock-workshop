@@ -1,4 +1,4 @@
-package pl.dpotyralski.spockintroduction
+package pl.dpotyralski.spockintroduction.scheduler
 
 import org.spockframework.spring.SpringBean
 import org.spockframework.spring.SpringSpy
@@ -6,7 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import pl.dpotyralski.spockintroduction.workshop.customer.Customer
 import pl.dpotyralski.spockintroduction.workshop.customer.CustomerRepository
-import pl.dpotyralski.spockintroduction.scheduler.SimpleTask
 import spock.lang.Specification
 
 @ActiveProfiles("h2")
