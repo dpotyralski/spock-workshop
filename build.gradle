@@ -38,7 +38,7 @@ dependencies {
     testImplementation "org.testcontainers:spock"
     testImplementation "org.testcontainers:postgresql"
 
-    testImplementation 'org.apache.groovy:groovy-sql:4.0.23'
+    testImplementation 'org.apache.groovy:groovy-sql:4.0.24'
 }
 
 tasks.named('test') {
